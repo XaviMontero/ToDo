@@ -1,4 +1,4 @@
-package com.example.yeshasprabhakar.todo;
+package com.example.yeshasprabhakar.todo.ucacue;
 
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AbsListView;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -33,6 +34,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import com.example.yeshasprabhakar.todo.model.DataModel;
+import com.example.yeshasprabhakar.todo.model.DatabaseHelper;
+import com.example.yeshasprabhakar.todo.adapter.ItemAdapter;
+import com.example.yeshasprabhakar.todo.adapter.MyNotificationPublisher;
+import com.example.yeshasprabhakar.todo.R;
+import com.example.yeshasprabhakar.todo.theme.SharedPref;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.DateFormatSymbols;
@@ -43,7 +50,6 @@ import java.util.Calendar;
 import static java.util.Calendar.MINUTE;
 
 public class MainActivity extends AppCompatActivity {
-
     public static final String NOTIFICATION_CHANNEL_ID = "10001";
     private final static String default_notification_channel_id = "default";
     private static final String TAG = "MainActivity";
@@ -54,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private ToggleButton toggleTheme;
     private SharedPref sharedPreferences;
-
+    private Button doctorButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedPreferences = new SharedPref(this);
@@ -74,15 +80,24 @@ public class MainActivity extends AppCompatActivity {
 
         //toggle to change theme and save uer preference
         toggleTheme = findViewById(R.id.themeActionButton);
+        doctorButton = findViewById(R.id.doctorButton);
         if (sharedPreferences.loadNightModeState()) {
             toggleTheme.setChecked(true);
         }
+        doctorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), DoctorActivity.class);
+                startActivity(intent);
+
+            }
+        });
         toggleTheme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    sharedPreferences.setNightModeState(true);
+                    sharedPreferences.setNightModeState(false);
                 } else {
                     sharedPreferences.setNightModeState(false);
                 }

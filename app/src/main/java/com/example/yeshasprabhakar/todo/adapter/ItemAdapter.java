@@ -1,4 +1,4 @@
-package com.example.yeshasprabhakar.todo;
+package com.example.yeshasprabhakar.todo.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.yeshasprabhakar.todo.R;
+import com.example.yeshasprabhakar.todo.model.DataModel;
+import com.example.yeshasprabhakar.todo.model.DatabaseHelper;
+
 import java.util.ArrayList;
 
 public class ItemAdapter extends BaseAdapter {
@@ -97,10 +102,10 @@ public class ItemAdapter extends BaseAdapter {
         DatabaseHelper databaseHelper = new DatabaseHelper(context);
         try {
             databaseHelper.deleteData(name, date, time);
-            toastMsg("Deleted Successfully!");
+            toastMsg("Eliminado con exito ucacue!");
         } catch (Exception e) {
             e.printStackTrace();
-            toastMsg("Something went wrong");
+            toastMsg("Trabajando juntos ucacue");
         }
     }
 

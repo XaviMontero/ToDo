@@ -1,4 +1,4 @@
-package com.example.yeshasprabhakar.todo;
+package com.example.yeshasprabhakar.todo.model;
 
 public class DataModel {
 

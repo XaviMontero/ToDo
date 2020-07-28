@@ -1,4 +1,4 @@
-package com.example.yeshasprabhakar.todo;
+package com.example.yeshasprabhakar.todo.model;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import com.example.yeshasprabhakar.todo.model.DataModel;
 
 import java.util.ArrayList;
 

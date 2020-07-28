@@ -1,4 +1,4 @@
-package com.example.yeshasprabhakar.todo;
+package com.example.yeshasprabhakar.todo.adapter;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -6,6 +6,8 @@ import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+
+import com.example.yeshasprabhakar.todo.ucacue.MainActivity;
 
 public class MyNotificationPublisher extends BroadcastReceiver {
 

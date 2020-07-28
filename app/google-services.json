@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "740866327876",
+    "firebase_url": "https://ucacue-doctor.firebaseio.com",
+    "project_id": "ucacue-doctor",
+    "storage_bucket": "ucacue-doctor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740866327876:android:2494db6c7b4ac979844311",
+        "android_client_info": {
+          "package_name": "com.example.yeshasprabhakar.todo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740866327876-t2h359biu2i74dd79dlbkr577opkidsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYOBTKoemd8HnCDYI5D1bqFsyMWVUmWCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740866327876-t2h359biu2i74dd79dlbkr577opkidsr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

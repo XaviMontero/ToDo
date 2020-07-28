@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">ToDo</string>
+    <string name="app_name">Ucacue</string>
     <string name="listEmptyText">
 <![CDATA[
-<p><b>What do you want to do today?</b><br> You can create new ToDo <br>using  + button</p>
+<p><b> API ucacue vacia ?</b><br> No encontro algun dato dentro de la api <br>usa  + boton</p>
 ]]>
 </string>
-    <string name="actionBarTitle">ToDo</string>
-    <string name="editTaskHint">My Task</string>
-    <string name="dialogDate">Date</string>
-    <string name="dialogTime">Time</string>
-    <string name="cardTitle">Title</string>
-    <string name="cardDate">sub title</string>
-    <string name="cardTime">sub title</string>
+    <string name="actionBarTitle">Ucacue</string>
+    <string name="editTaskHint">My citas</string>
+    <string name="dialogDate">Fecha</string>
+    <string name="dialogTime">Hora</string>
+    <string name="cardTitle">Doctor</string>
+    <string name="cardDate">Sub Titulo</string>
+    <string name="cardTime">Sub Titulo</string>
 </resources>

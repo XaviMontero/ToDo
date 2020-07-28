@@ -27,5 +27,18 @@
         android:textOn=""
          />
 
+    <Button
+        android:id="@+id/doctorButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_stat_name"
+        android:checked="false"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="false"
+        android:text=""
+        android:textOff=""
+        android:textOn=""
+        />
+
 
 </RelativeLayout>
