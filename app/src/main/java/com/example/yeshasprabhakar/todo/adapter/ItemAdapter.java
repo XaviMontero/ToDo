@@ -51,6 +51,8 @@ public class ItemAdapter extends BaseAdapter {
         TextView titleTextView = convertView.findViewById(R.id.title);
         TextView dateTextView = convertView.findViewById(R.id.dateTitle);
         TextView timeTextView = convertView.findViewById(R.id.timeTitle);
+        TextView cateTextView = convertView.findViewById(R.id.categoria);
+        TextView detaTextView = convertView.findViewById(R.id.descripcion);
         final ImageView delImageView = convertView.findViewById(R.id.delete);
         delImageView.setTag(position);
 
@@ -86,6 +88,8 @@ public class ItemAdapter extends BaseAdapter {
         titleTextView.setText(dataModel.getTitle());
         dateTextView.setText(dataModel.getDate());
         timeTextView.setText(dataModel.getTime());
+        cateTextView.setText(dataModel.getCategoria());
+        detaTextView.setText(dataModel.getDescripcion());
         return convertView;
 
     }

@@ -2,11 +2,13 @@
     <string name="app_name">Ucacue</string>
     <string name="listEmptyText">
 <![CDATA[
-<p><b> API ucacue vacia ?</b><br> No encontro algun dato dentro de la api <br>usa  + boton</p>
+<p><b> SQLlite ucacue vacia ?</b><br> No encontro algun dato dentro de la api <br>usa  + boton</p>
 ]]>
 </string>
     <string name="actionBarTitle">Ucacue</string>
-    <string name="editTaskHint">My citas</string>
+    <string name="editTaskHint">Titulo</string>
+    <string name="editDesTaskHint">Descripcion</string>
+    <string name="editCateTaskHint">Categoria</string>
     <string name="dialogDate">Fecha</string>
     <string name="dialogTime">Hora</string>
     <string name="cardTitle">Doctor</string>

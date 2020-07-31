@@ -14,31 +14,7 @@
         android:textColor="?attr/actionBarTextColor"
         android:textSize="24sp" />
 
-    <ToggleButton
-        android:id="@+id/themeActionButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/button_day_night"
-        android:checked="false"
-        android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true"
-        android:text=""
-        android:textOff=""
-        android:textOn=""
-         />
 
-    <Button
-        android:id="@+id/doctorButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/ic_stat_name"
-        android:checked="false"
-        android:layout_centerVertical="true"
-        android:layout_alignParentEnd="false"
-        android:text=""
-        android:textOff=""
-        android:textOn=""
-        />
 
 
 </RelativeLayout>

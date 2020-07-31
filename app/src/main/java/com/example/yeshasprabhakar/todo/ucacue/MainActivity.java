@@ -58,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
     private ItemAdapter itemsAdopter;
     private ListView itemsListView;
     private FloatingActionButton fab;
-    private ToggleButton toggleTheme;
+
     private SharedPref sharedPreferences;
-    private Button doctorButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedPreferences = new SharedPref(this);
@@ -78,32 +78,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.actionbar);
 
-        //toggle to change theme and save uer preference
-        toggleTheme = findViewById(R.id.themeActionButton);
-        doctorButton = findViewById(R.id.doctorButton);
-        if (sharedPreferences.loadNightModeState()) {
-            toggleTheme.setChecked(true);
-        }
-        doctorButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), DoctorActivity.class);
-                startActivity(intent);
 
-            }
-        });
-        toggleTheme.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    sharedPreferences.setNightModeState(false);
-                } else {
-                    sharedPreferences.setNightModeState(false);
-                }
-                restartApp();
-            }
-        });
 
 
         databaseHelper = new DatabaseHelper(this);
@@ -161,8 +136,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Insert data to database
-    private void insertDataToDb(String title, String date, String time) {
-        boolean insertData = databaseHelper.insertData(title, date, time);
+    private void insertDataToDb(String title, String date, String time, String cate, String det) {
+        boolean insertData = databaseHelper.insertData(title, date, time,cate,det);
         if (insertData) {
             try {
                 populateListView();
@@ -233,7 +208,8 @@ public class MainActivity extends AppCompatActivity {
         final EditText editTitle = dialogView.findViewById(R.id.edit_title);
         final TextView dateText = dialogView.findViewById(R.id.date);
         final TextView timeText = dialogView.findViewById(R.id.time);
-
+        final TextView cateText = dialogView.findViewById(R.id.edit_cate);
+        final TextView detText = dialogView.findViewById(R.id.edit_desc);
         //Set current date as default date
         final long date = System.currentTimeMillis();
         SimpleDateFormat dateSdf = new SimpleDateFormat("d MMMM");
@@ -305,21 +281,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        dialogBuilder.setTitle("Lets add new task!");
+        dialogBuilder.setTitle("Agrega una actividad !");
         dialogBuilder.setPositiveButton("Done", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 String title = editTitle.getText().toString();
                 String date = dateText.getText().toString();
                 String time = timeText.getText().toString();
+                String  cate  = cateText.getText().toString();
+                String  det  = detText.getText().toString();
+
                 if (title.length() != 0) {
                     try {
-                        insertDataToDb(title, date, time);
+                        insertDataToDb(title, date, time,cate,det);
                         scheduleNotification(getNotification(title), cal.getTimeInMillis());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {
-                    toastMsg("Oops, Cannot set an empty ToDo!!!");
+                    toastMsg("Oops,  !!");
                 }
             }
         });

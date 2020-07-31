@@ -15,12 +15,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "DatabaseHelper";
 
-    private static final String TABLE_NAME = "ToDo_Table";
+    private static final String TABLE_NAME = "ToDo_Table1";
     private static final String COL1 = "ID";
     private static final String COL2 = "Name";
     private static final String COL3 = "Date";
     private static final String COL4 = "Time";
-
+    private static final String COL5 = "Categoria";
+    private static final String COL6 = "Descripcion";
     public DatabaseHelper(Context context) {
         super(context, TABLE_NAME, null, 1);
     }
@@ -31,7 +32,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + COL1 + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COL2 + " TEXT, "
                 + COL3 + " DATE, "
-                + COL4 + " TIME" + ");";
+                + COL4 + " TIME, "
+                + COL5 + " TEXT, "
+                + COL6 + " TEXT "+ ");";
         Log.d(TAG, "Creating table " + createTable);
         db.execSQL(createTable);
     }
@@ -43,12 +46,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //Insert data into database
-    public boolean insertData(String item, String date, String time) {
+    public boolean insertData(String item, String date, String time,String categoria, String descripcion) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL2, item);
         contentValues.put(COL3, date);
         contentValues.put(COL4, time);
+        contentValues.put(COL5, categoria);
+        contentValues.put(COL6, descripcion);
         Log.d(TAG, "insertData: Inserting " + item + " to " + TABLE_NAME);
         long result = db.insert(TABLE_NAME, null, contentValues);
         db.close();
@@ -83,7 +88,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String title = cursor.getString(1);
             String date = cursor.getString(2);
             String time = cursor.getString(3);
-            DataModel dataModel = new DataModel(title, date, time);
+            String categoria = cursor.getString(4);
+            String descripcion = cursor.getString(5);
+            DataModel dataModel = new DataModel(title, date, time,categoria,descripcion);
             arrayList.add(dataModel);
         }
         db.close();

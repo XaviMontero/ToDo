@@ -35,13 +35,66 @@
             android:textColorHint="@color/darkColorDate" />
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/cateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/titleLayout">
 
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_assignment_pink_24"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/edit_cate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="@string/editCateTaskHint"
+            android:inputType="text"
+            android:textColor="?attr/dialogTextColor"
+            android:textColorHint="@color/darkColorDate" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/descLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/cateLayout">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_assignment_pink_24"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/edit_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:hint="@string/editDesTaskHint"
+            android:inputType="text"
+            android:textColor="?attr/dialogTextColor"
+            android:textColorHint="@color/darkColorDate" />
+
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/dateLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/titleLayout"
-        android:orientation="horizontal">
+        android:layout_below="@+id/descLayout"
+        android:orientation="horizontal"
+          >
 
 
         <ImageView
