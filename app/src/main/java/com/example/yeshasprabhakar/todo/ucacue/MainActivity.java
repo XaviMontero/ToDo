@@ -17,8 +17,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AbsListView;
-import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -26,7 +24,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
@@ -37,9 +34,7 @@ import androidx.core.app.NotificationCompat;
 import com.example.yeshasprabhakar.todo.model.DataModel;
 import com.example.yeshasprabhakar.todo.model.DatabaseHelper;
 import com.example.yeshasprabhakar.todo.adapter.ItemAdapter;
-import com.example.yeshasprabhakar.todo.adapter.MyNotificationPublisher;
 import com.example.yeshasprabhakar.todo.R;
-import com.example.yeshasprabhakar.todo.theme.SharedPref;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.DateFormatSymbols;
@@ -59,18 +54,10 @@ public class MainActivity extends AppCompatActivity {
     private ListView itemsListView;
     private FloatingActionButton fab;
 
-    private SharedPref sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        sharedPreferences = new SharedPref(this);
 
-        //load theme preference
-        if (sharedPreferences.loadNightModeState()) {
-            setTheme(R.style.DarkTheme);
-        } else {
-            setTheme(R.style.LightTheme);
-        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -96,17 +83,7 @@ public class MainActivity extends AppCompatActivity {
         hideFab();
     }
 
-    //Schedule alarm notification
-    private void scheduleNotification(Notification notification, long delay) {
-        Intent notificationIntent = new Intent(this, MyNotificationPublisher.class);
-        notificationIntent.putExtra(MyNotificationPublisher.NOTIFICATION_ID, 1);
-        notificationIntent.putExtra(MyNotificationPublisher.NOTIFICATION, notification);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        assert alarmManager != null;
-        alarmManager.set(AlarmManager.RTC_WAKEUP, delay, pendingIntent);
-        Log.d(TAG, "scheduleNotification: Notification set successfully!");
-    }
+
 
     //Build notification
     private Notification getNotification(String content) {
@@ -293,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
                 if (title.length() != 0) {
                     try {
                         insertDataToDb(title, date, time,cate,det);
-                        scheduleNotification(getNotification(title), cal.getTimeInMillis());
+                      //  scheduleNotification(getNotification(title), cal.getTimeInMillis());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
