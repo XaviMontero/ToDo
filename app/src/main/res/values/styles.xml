@@ -55,6 +55,8 @@
         <item name="colorPrimaryDark">@color/lightColorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <style name="SplahSrceen" parent="Theme.AppCompat.NoActionBar">
+            <item name="android:windowBackground">@drawable/splash</item>
+    </style>
 
 </resources>

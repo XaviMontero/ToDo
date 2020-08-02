@@ -22,6 +22,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 dependencies {
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     def lottieVersion = "3.4.1"
     implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation 'com.google.android.material:material:1.1.0'
