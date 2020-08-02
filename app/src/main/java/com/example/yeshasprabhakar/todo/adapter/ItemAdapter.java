@@ -1,6 +1,8 @@
 package com.example.yeshasprabhakar.todo.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -96,8 +98,12 @@ public class ItemAdapter extends BaseAdapter {
 
     //Remove item from list and database
     public void deleteItem(int position) {
-        deleteItemFromDb(arrayList.get(position).getTitle(), arrayList.get(position).getDate(), arrayList.get(position).getTime());
-        arrayList.remove(position);
+     //   Toast.makeText(context, arrayList.get(position).getCategoria(),Toast.LENGTH_LONG).show();
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/place/Dispensario+Medico+Del+IESS/@-2.8974422,-79.0033678,19z/data=!3m1!4b1!4m5!3m4!1s0x91cd1811490222b9:0x5248b7bff9f6d4f!8m2!3d-2.8974423!4d-79.0028203"));
+        context.startActivity(browserIntent);
+
+      //  deleteItemFromDb(arrayList.get(position).getTitle(), arrayList.get(position).getDate(), arrayList.get(position).getTime());
+      //  arrayList.remove(position);
         notifyDataSetChanged();
     }
 

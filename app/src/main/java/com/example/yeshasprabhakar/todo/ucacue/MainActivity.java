@@ -270,7 +270,6 @@ public class MainActivity extends AppCompatActivity {
                 if (title.length() != 0) {
                     try {
                         insertDataToDb(title, date, time,cate,det);
-                      //  scheduleNotification(getNotification(title), cal.getTimeInMillis());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
