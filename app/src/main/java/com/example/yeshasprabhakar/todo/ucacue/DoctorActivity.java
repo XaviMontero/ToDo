@@ -55,7 +55,7 @@ public class DoctorActivity extends AppCompatActivity {
         FrameLayout emptyView = findViewById(R.id.emptyViewDoctor);
         itemsListView.setEmptyView(emptyView);
 
-         writeNewUser("Maria Pinguil", "maternidad","03010506225");
+      
          getData();
 
          onFabClick();

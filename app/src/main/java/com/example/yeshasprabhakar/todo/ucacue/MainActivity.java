@@ -96,12 +96,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    sharedPreferences.setNightModeState(false);
-                } else {
-                    sharedPreferences.setNightModeState(false);
-                }
-                restartApp();
+                Intent intent = new Intent(getApplicationContext(), MapaActivity.class);
+                startActivity(intent);
             }
         });
 

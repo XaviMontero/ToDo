@@ -14,9 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/LightTheme">
+        <activity android:name=".ucacue.MapaActivity"></activity>
         <activity
             android:name=".ucacue.ui.login.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
         <activity
             android:name=".ucacue.SplashActivity"
             android:theme="@style/SplahSrceen">
